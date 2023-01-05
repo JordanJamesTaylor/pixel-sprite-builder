@@ -1,16 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+html,
 body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+  display: flex;  
+  justify-content: center;  
   align-items: center;
-  text-align: center;
-  min-width: fit-content;
-  margin-top: 15%;
-  background-color:#272744;
+  height: 100%;
+  font-family: 'VT323', monospace;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
