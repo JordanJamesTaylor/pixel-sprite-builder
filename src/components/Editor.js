@@ -55,17 +55,19 @@ export default function Editor(){
                     </div>
                 </div>
             </>)}
-            <button className="button" onClick={initDrawingPanel}>
+            <button className="btn" onClick={initDrawingPanel}>
                 {hideOptions ? "reset" : "start drawing"}
             </button>
             {hideOptions && (
+                <>
                 <GithubPicker color={selectedColour} onChangeComplete={changeColour} />
+                <DrawingPanel 
+                    width={panelWidth}
+                    height={panelHeight}
+                    selectedColour={selectedColour}
+                />
+                </>
             )}
-            <DrawingPanel 
-                width={panelWidth}
-                height={panelHeight}
-                selectedColour={selectedColour}
-            />
         </div>
     )
 }
