@@ -1,19 +1,56 @@
-h1{
-    margin-bottom: 1rem;
-    font-size: 70px;
-}
-
-#options{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
-}
-
-.editor{
+#editor{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #09345F;
+    height: 95vh;
+    width: 95vw;
+    background-color: #1A3D61;
+    border: 5px solid white;
+    border-radius: 5%;
+    outline-style: solid;
+    outline-color: black;
+}
+
+#play-space{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#editor-title{
+    font-family: 'VT323', monospace;
+    color: #58A3EF; 
+}
+
+#panel-space{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 45%;
+    margin: 10px;
+}
+
+#btn-space{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 90%;
+    width: 45%;
+    margin: 10px;   border: 5px solid black;
+}
+
+/* 
+.editor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #1A3D61;
     border: 5px solid white;
     border-radius: 5%;
     outline-style: solid;
@@ -22,6 +59,24 @@ h1{
     margin-top: 2rem;
 }
 
+#editor-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#options{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
 .editor-txt{
     color: #3F93E8;
 }
+
+h1{
+    margin-bottom: 1rem;
+    font-size: 70px;
+} 
+*/

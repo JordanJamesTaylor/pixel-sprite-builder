@@ -10,7 +10,7 @@ export default function Editor(){
 
     // Hide UI elements until user clicks btn
     const [hideOptions, setHideOptions] = useState(false);
-    const [hideDrawingPanel, setHideDrawingPanel] = useState(false);
+    const [hideDrawingPanel, setHideDrawingPanel] = useState(true);
 
     // Change colour based on user selection
     const [selectedColour, setSelectedColour] = useState("3f44336");
@@ -27,7 +27,53 @@ export default function Editor(){
     }
 
     return (
-        <div className="editor">
+        <div id="editor">
+            <h1 id="editor-title">SPRITE BUILDER</h1>
+            {hideDrawingPanel ? 
+            <button className="btn" onClick={initDrawingPanel}>
+                START BUILDING!
+            </button>
+            :
+            <div id="play-space">
+                <div id="panel-space">
+                    <GithubPicker color={selectedColour} onChangeComplete={changeColour} />
+                    <span style={{height: "25px"}}/>
+                    <DrawingPanel 
+                        width={panelWidth}
+                        height={panelHeight}
+                        selectedColour={selectedColour}
+                    />
+                </div>  
+                <div id="btn-space">
+                    <div className="grid-dimension">
+                    <div className="options">
+                        <input 
+                            type="number" 
+                            className="panelInput" 
+                            defaultValue={panelWidth}
+                            onChange={(e) => setPanelWidth(e.target.value)}
+                        />
+                        <span className="editor-txt">Width</span>
+                    </div>
+                    <div className="option">
+                        <input 
+                            type="number" 
+                            className="panelInput" 
+                            defaultValue={panelHeight} 
+                            onChange={(e) => setPanelHeight(e.target.value)}
+                        />
+                        <span className="editor-txt">Height</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    ) 
+}
+
+/*
+    <div className="editor">
             <h1 className="editor-txt">Pixel Editor</h1>
             {hideDrawingPanel && <h2 className="editor-txt">Enter Panel Dimensions</h2>}
             {hideDrawingPanel && (
@@ -68,6 +114,5 @@ export default function Editor(){
                 />
                 </>
             )}
-        </div>
-    )
-}
+    </div>
+*/
